@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 
 class IndexView(APIView):
     def get(self, request):
-        return Response({"message": ""})
+        return Response({"message": "Pdgewuyfd"})
 
 class HelloView(APIView):
     def get(self, request):
