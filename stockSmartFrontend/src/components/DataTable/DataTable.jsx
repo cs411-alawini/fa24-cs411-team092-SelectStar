@@ -182,7 +182,7 @@ const DataTable = ({ data, setData, schema }) => {
 
   const fetchData = async (schema) => {
     const apiEndpoints = {
-      "User": 'http://localhost:8000/administrator/administer/user',
+      User: 'http://localhost:8000/administrator/administer/user',
       "Promotional Offer": 'http://localhost:8000/administrator/administer/promotionaloffer',
       Supplier: 'http://localhost:8000/administrator/administer/supplier',
       Category: 'http://localhost:8000/administrator/administer/category',

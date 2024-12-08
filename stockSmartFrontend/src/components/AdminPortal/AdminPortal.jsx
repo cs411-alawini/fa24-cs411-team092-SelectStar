@@ -19,7 +19,7 @@ const AdminPortal = () => {
     Inventory: ["StockDate (yyyy-mm-dd)", "ProductId", "UnitPrice", "ManufactureDate (yyyy-mm-dd)", "ExpiryDate (yyyy-mm-dd)", "Quantity"],
     Supplier: ["Name", "Address", "Contact"],
     "Promotional Offer": ["StartDate (yyyy-mm-dd)", "EndDate (yyyy-mm-dd)", "DiscountRate"],
-    "User": ["EmailId", "Password", "Type", "FirstName", "LastName", "PhoneNumber"],
+    User: ["EmailId", "Password", "Type", "FirstName", "LastName", "PhoneNumber"],
     // Order: ["OrderDate (yyyy-mm-dd)", "Inventories"],  // Updated for Order
   };
 
@@ -29,13 +29,13 @@ const AdminPortal = () => {
     Inventory: { "StockDate (yyyy-mm-dd)": "", ProductId: "", UnitPrice: "", "ManufactureDate (yyyy-mm-dd)": "", "ExpiryDate (yyyy-mm-dd)": "", Quantity: "" },
     Supplier: { Name: "", Address: "", Contact: "" },
     "Promotional Offer": { "StartDate (yyyy-mm-dd)": "", "EndDate (yyyy-mm-dd)": "", DiscountRate: ""},
-    "User": { EmailId: "", Password: "", Type: "", FirstName: "", LastName: "", PhoneNumber: "" },
+    User: { EmailId: "", Password: "", Type: "", FirstName: "", LastName: "", PhoneNumber: "" },
     // Order: { "OrderDate (yyyy-mm-dd)": "", Inventories: [] },  // Order format with Inventories
   };
 
   const fetchData = async (schema) => {
     const apiEndpoints = {
-      "User": 'http://localhost:8000/administrator/administer/user',
+      User: 'http://localhost:8000/administrator/administer/user',
       "Promotional Offer": 'http://localhost:8000/administrator/administer/promotionaloffer',
       Supplier: 'http://localhost:8000/administrator/administer/supplier',
       Category: 'http://localhost:8000/administrator/administer/category',
