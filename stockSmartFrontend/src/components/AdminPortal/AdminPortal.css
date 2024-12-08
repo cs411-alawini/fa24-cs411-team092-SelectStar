@@ -1,11 +1,13 @@
 .admin-portal {
     display: flex;
-    height: 100vh;
+  justify-content: center;
   }
   
   .main-content {
     flex: 1;
-    padding: 20px;
+    padding: 0 20px;
+    width: 80%;
+   
     background-color: #f9f9f9;
   }
   
@@ -31,5 +33,12 @@
     transition: background-color 0.3s ease;
     background-color: #007bff;
     font-weight: bold;
+  }
+
+  .portal-header{
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   

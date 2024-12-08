@@ -34,9 +34,9 @@ const AdminPortal = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`/api/${selectedSchema}`);
+      const response = await fetch('http://localhost:8000/administrator/administer/inventory');
       const result = await response.json();
-      setData(result);
+      setData(result.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -99,19 +99,23 @@ const AdminPortal = () => {
         setSelectedSchema={setSelectedSchema}
       />
       <div className="main-content">
-        <h1>{selectedSchema}</h1>
+        <div className="portal-header">
+        <h1 >{selectedSchema}</h1>
         <button
           className="add-button"
           onClick={() => setShowModal(true)} // Open modal when clicked
         >
           Add New {selectedSchema}
         </button>
+        </div>
+        
         <DataTable
           data={data}
           onAdd={handleAdd}
           onUpdate={handleUpdate}
           onDelete={handleDelete}
         />
+        
         {showModal && (
           <Modal
             isOpen={showModal} // Use the isOpen prop

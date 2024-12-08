@@ -10,12 +10,13 @@ const InventoryAnalysis = () => {
     // Fetch data from the backend
     const fetchExpiringProducts = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/top15ProductsExpiringSoon"); // API endpoint
+        const response = await fetch("http://localhost:8000/administrator/administer/inventory"); // API endpoint
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
-        setProducts(data); // Set fetched data
+        console.log(data.data)
+        setProducts(data.data); // Set fetched data
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -56,24 +57,18 @@ const InventoryAnalysis = () => {
        <p>Loading...</p>
      ) : (
        <table border="1" style={{ width: "100%", borderCollapse: "collapse" }}>
+        
          <thead>
            <tr>
-           <th>Serial No.</th>
-             <th>Product Name</th>
-             <th>Expiry Date</th>
-             <th>Supplier Name</th>
-             <th>Quantity to Replace</th>
+           {products.length>0 && Object.keys(products[0]).map((key)=> <th>{key}</th>) }
+
            </tr>
          </thead>
          <tbody>
-           {products.map((product, index) => (
+           {products?.map((product, index) => (
              <tr key={index}>
-              <td>{index+1}</td>
-
-               <td>{product.ProductName}</td>
-               <td>{product.ExpiryDate}</td>
-               <td>{product.SupplierName}</td>
-               <td>{product.QuantityOfProductsGettingExpired}</td>
+              {Object.keys(product).map((key)=> <td>{product[key]}</td>) }
+  
              </tr>
            ))}
          </tbody>

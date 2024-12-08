@@ -9,7 +9,7 @@ const DataTable = ({ data, onAdd, onUpdate, onDelete }) => {
     <div className="data-table">
       <MaterialReactTable
         title="Data Table"
-        columns={Object.keys(data[0] || {}).map((key) => ({ title: key, field: key }))}
+        columns={Object.keys(data[0] || {}).map((key) => ({ accessorKey: key, header: key, field: key, id:key }))}
         data={data}
         options={{ search: true, paging: true }}
         editable={{
