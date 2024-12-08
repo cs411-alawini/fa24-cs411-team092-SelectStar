@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import './InventoryAnalysis.css';
-import Sidebar from '../Sidebar/Sidebar'
 
 const InventoryAnalysis = () => {
 
