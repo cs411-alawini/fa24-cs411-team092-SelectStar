@@ -1,20 +1,14 @@
 import React from "react";
 import "./Header.css";
-// import { FaSearch, FaUserCircle } from "react-icons/fa";
-// import { TiThMenu } from "react-icons/ti";
+import { useNavigate } from 'react-router-dom';
 
 
-const Header = () => {
+const Header = ({setIsAuthenticated}) => {
+  const navigate = useNavigate();
+
   return (
     <header className="header">
-      {/* <div className="menu-icon">
-      <TiThMenu />
-      </div> */}
-      {/* <div className="search-bar">
-      <FaSearch className="search-icon"/>
-        <input className="search-bar-input" type="text" placeholder="Search" />
-      </div> */}
-      <button className="logout-button">Log Out</button>
+      <button className="logout-button" onClick={()=> {setIsAuthenticated(false); navigate('/')}}>Log Out</button>
 
     </header>
   );
