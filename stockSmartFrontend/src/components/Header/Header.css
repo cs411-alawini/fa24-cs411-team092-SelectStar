@@ -1,6 +1,6 @@
 .header {
-position: sticky;
-top: 0;
+/* position: sticky;
+top: 0; */
   display: flex;
   align-items: center;
   justify-content: end;
@@ -47,17 +47,17 @@ top: 0;
 }
 
 .logout-button {
-  background-color: #E9EFFD;
-  color: #2f3e46;
+  background-color: #3c505b;
+  color: rgb(218, 217, 217);
   border: none;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .logout-button:hover {
-  background-color: #91B3F9;
+  background-color: rgb(18, 49, 71);
 }
