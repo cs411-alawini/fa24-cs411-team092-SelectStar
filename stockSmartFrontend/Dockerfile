@@ -1,11 +1,15 @@
-# Use a lightweight web server image
-FROM nginx:alpine
+FROM node:20
 
-# Copy the build files to the Nginx HTML folder
-COPY build/ /usr/share/nginx/html
+WORKDIR /app
 
-# Expose the Nginx port
-EXPOSE 80
+COPY package*.json ./
 
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
