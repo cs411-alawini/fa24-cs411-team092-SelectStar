@@ -154,10 +154,9 @@ const InventoryAnalysis = () => {
     <div className="inventory-analysis-container">
       <div className="content">
         <main className="main-content">
-          <h2 className="main-title">Current Inventory Analysis</h2>
 
           {/* Search Bar */}
-          <div className="search-container">
+          <div className="search-container" style={{paddingTop: "50px", paddingBottom: "30px"}}>
             <input
               type="text"
               className="search-input"
@@ -180,6 +179,24 @@ const InventoryAnalysis = () => {
             )}
           </div>
 
+        <div className="metric-cards">
+            <div className="metric-card purple">
+              <h3>30,000</h3>
+              <p>Total items</p>
+              <span className="growth">⬆ 12%</span>
+            </div>
+            <div className="metric-card blue">
+              <h3>270</h3>
+              <p>Total orders</p>
+              <span className="growth">⬆ 12%</span>
+            </div>
+            <div className="metric-card orange">
+              <h3>1,000</h3>
+              <p>Today's revenue</p>
+              <span className="growth">⬆ 12%</span>
+            </div>
+          </div>
+          
           {isLoading ? (
             'Loading...'
           ) : (
